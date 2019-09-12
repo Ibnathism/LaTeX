@@ -1,0 +1,9 @@
+\begin{thebibliography}{1}
+
+\bibitem{redmon2016you}
+Joseph Redmon, Santosh Divvala, Ross Girshick, and Ali Farhadi.
+\newblock You only look once: Unified, real-time object detection.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition}, pages 779--788, 2016.
+
+\end{thebibliography}

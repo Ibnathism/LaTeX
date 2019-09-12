@@ -1,0 +1,69 @@
+\documentclass[14pt]{article}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath}
+
+
+\title{\LaTeX lecture 2}
+\author{Muntaka}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\section{Previous Class}4
+	usepackage \verb|usepackage{verbatim}|.\textbackslash.
+	\verb|begin{equation}|
+	
+	
+	\section{Figure}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.3\textwidth]{buetlogo.png}
+		\caption{Buet Logo}
+	\end{figure}
+
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}{0.4\textwidth}
+			\includegraphics[width=0.8\textwidth]{ubuntulogo.png}
+			\caption{Ubuntu}
+		\end{subfigure}
+	~
+		\begin{subfigure}{0.4\textwidth}
+			\includegraphics[width=0.8\textwidth]{kalilinuxlogo.jpeg}
+			\caption{Kali Linux}
+		\end{subfigure}
+		\caption{Linux Logo}
+	\end{figure}
+
+	\section{Mathematical Equation}
+	text a + a = 2a\\
+	text $a + a = 2a$\\
+	text $$a + a = 2a$$
+	\begin{equation}
+	a + a = 2a
+	\end{equation}
+	
+	$$a^2 \quad a_2 \quad a_in$$
+	$$\int^a_bf(x)dx$$	
+	$$\frac{\tau}{\pi}$$
+	$$\frac{n^2-1}{2n}$$
+	
+	
+	\begin{equation}
+		\begin{bmatrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1
+		\end{bmatrix}
+	\end{equation}
+
+	\section{Bibliography}
+	This book is \cite{redmon2016you} amazing
+	
+	
+	\bibliographystyle{plain}
+	\bibliography{bibfile}
+	
+\end{document}
