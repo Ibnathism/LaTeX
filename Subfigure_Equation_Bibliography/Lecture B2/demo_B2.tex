@@ -1,0 +1,77 @@
+\documentclass[a4paper, 12pt]{article}
+
+\title{Subfigure, Math, Bibliography}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath}
+%\usepackage{mathtools}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\listoffigures
+\newpage
+
+\section{Subfigure}
+Multiple images in the same figure.\\
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[scale=0.2]{index.jpeg}
+		\caption{small}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.5\textwidth}
+		\centering
+		\includegraphics[scale=0.4]{index.jpeg}
+		\caption{large}
+	\end{subfigure}
+	\caption{Sea-beach}
+\end{figure}
+
+\section{Math}
+\subsection{Inline Mode}
+Given $n$ sets, $|\bigcup\limits_{i=1}^{n} A_i| \leq \sum\limits_{i=1}^{n} |A_i|$
+\subsection{Equation Mode}
+\begin{equation}
+	x_1^2 + x_2 = \sqrt{x+y}
+\end{equation}
+
+\begin{equation*}
+	\sin^2x + \frac{1}{\log x} = y
+\end{equation*}
+	
+\begin{align*}
+	\cos^2\theta & = \frac{1}{2}.2\cos^2\theta\\
+	& = \frac{1}{2}.(1+\cos 2\theta)
+\end{align*}
+
+\begin{equation}
+	F(x) = 
+	\begin{cases}
+		100 & \text { if } x > 0\\
+		0 & \text{ otherwise}
+	\end{cases}
+\end{equation}
+
+\begin{equation}
+	\lim_{x \to 0} x^\frac{1}{x}
+\end{equation}
+
+\begin{equation}
+	\frac{d}{dx} x^2 = 2x
+\end{equation}
+
+\begin{equation}
+	\int_0^1 xdx
+\end{equation}
+
+\section{Bibliography}
+In case of any confusion see \cite{abcd}.
+
+\bibliographystyle{plain}
+\bibliography{ref_link}
+
+\end{document}
+	

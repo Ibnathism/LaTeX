@@ -1,0 +1,324 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\setlength{\parindent}{0cm}  % to remove indentation at the beginning of paragraph.
+
+\title{\LaTeX Lecture 2}
+\author{Tareq}
+
+\begin{document}
+\maketitle
+
+\section{Figures}
+
+\subsection{Single Figure}
+Figures need graphicx package. 
+
+\begin{verbatim}
+\usepackage{graphicx}.
+
+\begin{figure}[h] 
+\centering
+\includegraphics[width=0.3\textwidth]{buetlogo.png}
+\caption{Logo of BUET}
+\label{fig:logobuet}
+\end{figure}
+\end{verbatim}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\textwidth]{buetlogo.png}
+	\caption{Logo of BUET}
+	\label{fig:logobuet}
+\end{figure}
+
+\subsection{Multiple Figures}
+
+You have to include subcaption package for side by side images.
+
+\begin{verbatim}
+\usepackage{subcaption}
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{ubuntulogo.png}
+		\caption{Ubuntu}
+	\end{subfigure}
+	~
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{kalilogo.png}
+		\caption{Kali Linux}
+	\end{subfigure}
+	\caption{Linux Distributions}
+\end{figure}
+
+\end{verbatim}
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{ubuntulogo.png}
+		\caption{Ubuntu}
+	\end{subfigure}
+	~
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{kalilogo.png}
+		\caption{Kali Linux}
+	\end{subfigure}
+	\caption{Linux distributions}
+\end{figure}
+
+\section{Equation}
+
+\subsection{Simple Equation}
+
+This is a simple equation: $a + a = 2a$\\
+\verb|$a + a = 2a$|\\
+This is not math mode: a + a = 2a.
+
+\section{Superscript and Subscript}
+
+Use \verb|_| for subscript, e.g. \verb|$a_n$| shows $a_n$.\\
+Use \verb|^| for superscript, e.g. \verb|$a^n$| shows $a^n$.\\
+Use \verb|{}| to group more than one characters, e.g. \verb|$a_{in}$| shows $a_{in}$.\\
+Also \verb|$^nP_r$| gives us $^nP_r$.
+
+More complex equation, \verb|$$\sum_{i=0}^n a_i$$| shows $$\sum_{i=0}^n a_i$$.
+
+\subsection{Mathematical Environments}
+
+Inline: \verb|$\sum_{i=0}^n a_i$|\\
+Inline with displaystyle: \verb|$\displaystyle\sum_{i=0}^n a_i$|\\
+Block level: \verb|$$\sum_{i=0}^n a_i$$|\\
+Block level with equation number:
+\begin{verbatim}
+\begin{equation}
+\sum_{i=0}^n a_i
+\end{equation}
+\end{verbatim}
+Block level without equation number:
+\begin{verbatim}
+\begin{equation*}
+\sum_{i=0}^n a_i
+\end{equation*}
+\end{verbatim}
+
+\textbf{Notice the difference in output.}\\
+Inline: $\sum_{i=0}^n a_i$\\
+Inline with displaystyle: $\displaystyle\sum_{i=0}^n a_i$\\
+Block level: $$\sum_{i=0}^n a_i$$\\
+Block level with equation number:
+\begin{equation}
+\sum_{i=0}^n a_i
+\end{equation}
+Block level without equation number:
+\begin{equation*}
+\sum_{i=0}^n a_i
+\end{equation*}
+
+
+\subsection{Equation Labeling}
+
+\begin{equation}
+\label{eq:sum}
+\sum_{i=0}^n a_i
+\end{equation}
+
+\begin{verbatim}
+\begin{equation}
+\label{eq:sum}
+\sum_{i=0}^n a_i
+\end{equation}
+\end{verbatim}
+
+Equation \ref{eq:sum} shows sum of numbers from zero to $n$.
+
+
+\subsection{Equation Alignment}
+
+\begin{align*}
+A & = \frac{\pi r^2}{2} \\
+ & = \frac{1}{2} \pi r^2
+\end{align*}
+
+\begin{verbatim}
+\begin{align*}
+A & = \frac{\pi r^2}{2} \\
+ & = \frac{1}{2} \pi r^2
+\end{align*}
+\end{verbatim}
+
+
+\subsection{Cases}
+
+\begin{equation}
+    |x| = 
+    \begin{cases}
+    x & \textrm{if } x \geq 0\\
+    -x & \textrm{if } x < 0\\
+    \end{cases}
+\end{equation}
+
+\begin{verbatim}
+\begin{equation}
+    |x| = 
+    \begin{cases}
+    x & \textrm{if } x \geq 0\\
+    -x & \textrm{if } x < 0\\
+    \end{cases}
+\end{equation}
+\end{verbatim}
+
+\subsection{Miscellaneous}
+
+For some of the commands, you need to include \verb|amsmath| package.\\
+
+Comparisons:\\
+\verb|$ < \leq $| shows, $ < \leq $\\
+\verb|$ > \geq $| shows, $ > \geq $\\
+
+Set operations:\\
+\verb|\forall x \in X, \exists y \leq \epsilon|\\
+$$ \forall x \in X, \exists y \leq \epsilon $$
+
+\verb|A \cap B, A \cup B|\\
+$$ A \cap B, A \cup B $$
+
+Limits and Infinity:\\
+\verb|\lim_{x \to \infty} \exp(-x) = 0|\\
+$$ \lim_{x \to \infty} \exp(-x) = 0 $$
+
+Fractions:\\
+\verb|\frac{a}{b}|\\
+$$ \frac{a}{b} $$
+
+Binomials:\\
+\verb|\binom{n}{k}|\\
+$$ \binom{n}{k} $$
+
+Times:\\
+\verb|a \times b|\\
+$$ a \times b $$
+
+Root:\\
+square root: $ \sqrt{a} $, \verb|\sqrt{a}|\\
+$n$th root: $ \sqrt[n]{a} $, \verb|\sqrt[n]{a}|\\
+
+Modular:\\
+\verb|a \bmod b, a \pmod b, a \equiv b|\\
+$$ a \bmod b, a \pmod b, a \equiv b $$
+
+Integrals:\\
+\verb|\int_a^b xdx|\\
+$$ \int_a^b xdx $$
+
+Plus minus:\\
+\verb|a \pm 5, a \mp 5|\\
+$$ a \pm 5, a \mp 5 $$
+
+Trigonometry:\\
+\verb|\cos2\theta = \cos^2 - \sin^2|\\
+$$\cos2\theta = \cos^2 - \sin^2$$
+
+Derivatives:\\
+\verb|\frac{du}{dt} \quad \frac{\partial u}{\partial t}|\\
+$$\frac{du}{dt} \quad \frac{\partial u}{\partial t}$$
+
+Custom operator:\\
+\verb|\textrm{cos}2\theta = \textrm{cos}^2 - \textrm{sin}^2|\\
+$$\textrm{cos}2\theta = \textrm{cos}^2 - \textrm{sin}^2$$
+
+\subsection{Find More Symbols}
+
+Visit \url{http://detexify.kirelabs.org/classify.html} and draw symbol by hand.
+
+\subsection{Autometic Sizing of Parentheses/Braces/Brackets}
+
+\verb|(\frac{a}{b})|\\
+$$ (\frac{a}{b}) $$
+\\~\\
+\verb|\left(\frac{a}{b}\right)|
+$$ \left(\frac{a}{b}\right) $$
+
+
+\subsection{Matrices}
+
+\textbf{matrix}
+\begin{verbatim}
+\begin{equation}
+	\begin{matrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1\\
+	\end{matrix}
+\end{equation}
+\end{verbatim}
+
+\begin{equation}
+	\begin{matrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1\\
+	\end{matrix}
+\end{equation}
+\\~\\
+\textbf{pmatrix}
+\begin{verbatim}
+\begin{equation}
+	\begin{pmatrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1\\
+	\end{pmatrix}
+\end{equation}
+\end{verbatim}
+
+\begin{equation}
+	\begin{pmatrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1\\
+	\end{pmatrix}
+\end{equation}
+\\~\\
+\textbf{bmatrix}
+\begin{equation}
+	\begin{bmatrix}
+		1 & 0 & 0\\
+		0 & 1 & 0\\
+		0 & 0 & 1\\
+	\end{bmatrix}
+\end{equation}
+\\~\\
+Change the matrix environment to $pbBvV$matrix in the following equation and observe the output:
+
+
+\section{Bibliography}
+
+Process of compiling external bib file (assuming tex file name is doc.tex, it does not matter what the bib file name is):
+\begin{verbatim}
+pdflatex doc.tex
+bibtex doc
+pdflatex doc.tex
+pdflatex doc.tex
+\end{verbatim}
+
+Refer to a work/paper/journal by \verb|\cite{tag}|. You can get BibTex from Google Scholar.
+
+For example, Convolutional Neural Network (CNN) \cite{lecun1998gradient} has been sucessfully applied in various areas of computer vision. Large datasets like ImageNet \cite{deng2009imagenet} can be used in trainning a CNN.
+
+\bibliographystyle{plain}
+\bibliography{bibfile}
+
+
+\end{document}
