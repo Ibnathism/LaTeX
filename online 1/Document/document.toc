@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}First section}{1}
+\contentsline {subsection}{\numberline {1.1}Sample}{1}
+\contentsline {paragraph}{Sample}{2}
+\contentsline {section}{\numberline {2}Second section}{2}
+\contentsline {section}{\numberline {3}List}{2}
+\contentsline {section}{\numberline {4}Table}{2}
+\contentsline {subsection}{\numberline {4.1}Multicolumn}{2}
+\contentsline {subsection}{\numberline {4.2}Multi-row}{3}
+\contentsline {subsection}{\numberline {4.3}Both}{3}
